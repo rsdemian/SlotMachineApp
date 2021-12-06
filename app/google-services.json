@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "131245151062",
+    "firebase_url": "https://slotmachine-d566a-default-rtdb.firebaseio.com",
+    "project_id": "slotmachine-d566a",
+    "storage_bucket": "slotmachine-d566a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131245151062:android:854ff8363acafebcd07cf7",
+        "android_client_info": {
+          "package_name": "com.example.slotmachine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131245151062-0gbljd2bp5impfo3ic096fkstig91abr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhQjI0sBPsO9MsmdHuyBc-nhG_8LsZ8aE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131245151062-0gbljd2bp5impfo3ic096fkstig91abr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

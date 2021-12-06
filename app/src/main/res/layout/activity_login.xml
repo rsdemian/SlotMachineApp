@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novo_fundo_do_login"
+    tools:context=".LoginActivity">
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="331dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="axlrose@gunsnroses.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etSenha"
+        android:layout_width="331dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:hint="Mínino 6 caracteres..."
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="185dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Entrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSenha" />
+
+    <Button
+        android:id="@+id/btnCadastrarse"
+        android:layout_width="185dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Cadastrar-se"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

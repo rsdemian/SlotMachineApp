@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novo_fundo_do_login"
+    tools:context=".Orientacoes">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="371dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF9800"
+        android:text="O jogador estoura a máquina quando tirar 3 setes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="371dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#673AB7"
+        android:text="Quando não vem nenhum sete, o jogador perde uma moeda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="371dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#4CAF50"
+        android:text="A cada sete o jogador ganha uma moeda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="371dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2196F3"
+        android:text="O Jogador começa com 20 moedas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
