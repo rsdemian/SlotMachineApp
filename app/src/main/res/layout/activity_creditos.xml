@@ -4,15 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RankingActivity">
+    android:background="@drawable/telacreditos"
+    tools:context=".CreditosActivity">
 
-
-    <ListView
-        android:id="@+id/lvRanking"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/telaranking"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

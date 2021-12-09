@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_creditos.xml" value="0.1" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_list_ranking.xml" value="0.14" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_lista_ranking.xml" value="0.1375" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_orientacoes.xml" value="0.19" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/activity_ranking.xml" value="0.13" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/content_main.xml" value="0.15520833333333334" />
         <entry key="..\:/SlotMachine/app/src/main/res/layout/item.xml" value="0.1375" />
+        <entry key="..\:/SlotMachine/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1125" />
+        <entry key="..\:/SlotMachine/app/src/main/res/mipmap-anydpi-v26/ic_launcher_SlotMachine.xml" value="0.2203125" />
+        <entry key="..\:/SlotMachine/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

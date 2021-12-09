@@ -1,8 +1,10 @@
 package com.example.slotmachine;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -23,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnEntrar;
     private Button btnCadastrarse;
 
+
     MediaPlayer mediaPlayer;
 
     private FirebaseAuth auth;
@@ -39,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         etSenha = findViewById(R.id.etSenha);
         btnCadastrarse = findViewById(R.id.btnCadastrarse);
         btnEntrar = findViewById(R.id.btnEntrar);
+
 
         auth = FirebaseAuth.getInstance();
 
@@ -136,7 +140,4 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
     }
-
-
-
 }

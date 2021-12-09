@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
     int moedaMaquina;
 
     int trilhaInicioJogo =  R.raw.music5;
-    int trilhaMoeda = R.raw.music3;
     int trilhaPerdeu = R.raw.perdeu;
-    int trilhaGanhou = R.raw.ganhou;
+    int trilhaGanhou = R.raw.winner;
 
     private ListView lvRanking;
     private ArrayAdapter adapter;
@@ -66,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnNovoJogo;
     private Button btnSair;
     private Button btnRanking;
+    private Button btnCreditos;
     private TextView lblResultadoMoeda;
     private TextView lblResultadoPontuacao;
 
@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         btnNovoJogo = findViewById(R.id.btnNovoJogo);
         btnSair = findViewById(R.id.btnSair);
         btnRanking = findViewById(R.id.btnRanking);
+        btnCreditos = findViewById(R.id.btnCreditos);
         lblResultadoMoeda = findViewById(R.id.lblResultadoMoeda);
         lblResultadoPontuacao = findViewById(R.id.lblResultadoPontuacao);
 
@@ -188,6 +189,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnCreditos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,CreditosActivity.class);
+                startActivity(intent);
+                StopMusic();
+            }
+        });
+
     }
 
     /*@Override
@@ -249,21 +259,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void GravarNoBanco(String nomePlayer, int pontuacao){
-        //String nome = etNome.getText().toString();
-        /*if(nome.isEmpty()){
-            Toast.makeText(this,"Preencha seu nome jogador!",Toast.LENGTH_LONG).show();
-        }else{*/
-            ranking = new Ranking();
-            ranking.setNomePlayer(nomePlayer);
-            ranking.setPontuacao(pontuacao);
+        ranking = new Ranking();
+        ranking.setNomePlayer(nomePlayer);
+        ranking.setPontuacao(pontuacao);
 
-            reference.child("Ranking").push().setValue(ranking);
-            //etNome.setText("");
-        //}
+        reference.child("Ranking").push().setValue(ranking);
     }
 
     public void ValidaJogo(int valorA, int valorB, int valorC){
-        //Se der três 7 o usuário ganha da máquina!
+        //Se der três 7 o jogador ganha da máquina!
         if((valorA == 7) && (valorB == 7) && (valorC == 7)){
             btnUm.setBackgroundColor(Color.BLUE);
             btnDois.setBackgroundColor(Color.BLUE);
@@ -281,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
             final  EditText etNome = new EditText(MainActivity.this);
             etNome.setInputType(InputType.TYPE_CLASS_TEXT);
             alertaGanhou.setView(etNome);
-            alertaGanhou.setIcon(android.R.drawable.ic_delete);
+            alertaGanhou.setIcon(android.R.drawable.star_on);
             //alertaGanhou.setPositiveButton("OK",null);
             alertaGanhou.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
@@ -289,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
                     nomePlayerGanhou = etNome.getText().toString();
                     Toast.makeText(MainActivity.this,"Nome do jogador: " + nomePlayerGanhou,Toast.LENGTH_LONG);
                     GravarNoBanco(nomePlayerGanhou,pontuacao);
-                    GravarNoBanco("SlotMachine",pontuacaoMaquina);
+                    //GravarNoBanco("SlotMachine",pontuacaoMaquina);
                 }
             });
             alertaGanhou.create();
@@ -299,34 +303,11 @@ public class MainActivity extends AppCompatActivity {
             btnUm.setEnabled(false);
             btnDois.setEnabled(false);
             btnTres.setEnabled(false);
+            btnApostar.setEnabled(false);
         }else{
             if (((valorA == 7) && (valorB == 7)) || (valorA == 7) && (valorC == 7) || ((valorB == 7))) {
                 //Musica(trilhaMoeda);
-                if(valorA == 7 && valorB == 7){
-                    btnUm.setBackgroundColor(Color.BLUE);
-                    btnDois.setBackgroundColor(Color.BLUE);
-                }else if (valorA == 7 && valorC == 7){
-                    btnUm.setBackgroundColor(Color.BLUE);
-                    btnTres.setBackgroundColor(Color.BLUE);
-                }else if(valorB == 7 && valorC == 7){
-                    btnUm.setBackgroundColor(Color.RED);
-                    btnDois.setBackgroundColor(Color.BLUE);
-                    btnTres.setBackgroundColor(Color.BLUE);
-                }
-                else if(valorA == 7){
-                    btnUm.setBackgroundColor(Color.BLUE);
-                    btnDois.setBackgroundColor(Color.RED);
-                    btnTres.setBackgroundColor(Color.RED);
-                }
-                else if(valorB == 7){
-                    btnDois.setBackgroundColor(Color.BLUE);
-                    btnUm.setBackgroundColor(Color.RED);
-                    btnTres.setBackgroundColor(Color.RED);
-                }else if(valorC == 7){
-                    btnTres.setBackgroundColor(Color.BLUE);
-                    btnUm.setBackgroundColor(Color.RED);
-                    btnDois.setBackgroundColor(Color.RED);
-                }
+                MudaCoresA(valorA,valorB,valorC);
                 moeda = moeda + 2;
                 pontuacao = pontuacao + 2;
                 pontuacaoMaquina = pontuacaoMaquina - 1;
@@ -335,20 +316,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 if((valorA == 7) || (valorB == 7) || (valorC == 7)){
                    // Musica(trilhaMoeda);
-                    if(valorA == 7){
-                        btnUm.setBackgroundColor(Color.BLUE);
-                        btnDois.setBackgroundColor(Color.RED);
-                        btnTres.setBackgroundColor(Color.RED);
-                    }
-                    else if(valorB == 7){
-                        btnDois.setBackgroundColor(Color.BLUE);
-                        btnUm.setBackgroundColor(Color.RED);
-                        btnTres.setBackgroundColor(Color.RED);
-                    }else if(valorC == 7){
-                        btnTres.setBackgroundColor(Color.BLUE);
-                        btnUm.setBackgroundColor(Color.RED);
-                        btnDois.setBackgroundColor(Color.RED);
-                    }
+                    MudaCoresB(valorA,valorB,valorC);
                     moeda = moeda + 1;
                     pontuacao = pontuacao + 1;
                     pontuacaoMaquina = pontuacaoMaquina - 1;
@@ -401,5 +369,54 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    private void MudaCoresA(int valorA,int valorB, int valorC){
+        if(valorA == 7 && valorB == 7){
+            btnUm.setBackgroundColor(Color.GREEN);
+            btnDois.setBackgroundColor(Color.GREEN);
+            btnTres.setBackgroundColor(Color.RED);
+        }else if (valorA == 7 && valorC == 7){
+            btnUm.setBackgroundColor(Color.GREEN);
+            btnDois.setBackgroundColor(Color.RED);
+            btnTres.setBackgroundColor(Color.GREEN);
+        }else if(valorB == 7 && valorC == 7){
+            btnUm.setBackgroundColor(Color.RED);
+            btnDois.setBackgroundColor(Color.GREEN);
+            btnTres.setBackgroundColor(Color.GREEN);
+        }
+        else if(valorA == 7){
+            btnUm.setBackgroundColor(Color.GREEN);
+            btnDois.setBackgroundColor(Color.RED);
+            btnTres.setBackgroundColor(Color.RED);
+        }
+        else if(valorB == 7){
+            btnDois.setBackgroundColor(Color.GREEN);
+            btnUm.setBackgroundColor(Color.RED);
+            btnTres.setBackgroundColor(Color.RED);
+        }else if(valorC == 7){
+            btnTres.setBackgroundColor(Color.GREEN);
+            btnUm.setBackgroundColor(Color.RED);
+            btnDois.setBackgroundColor(Color.RED);
+        }
+    }
+
+    private void MudaCoresB(int valorA,int valorB,int valorC){
+        if(valorA == 7){
+            btnUm.setBackgroundColor(Color.GREEN);
+            btnDois.setBackgroundColor(Color.RED);
+            btnTres.setBackgroundColor(Color.RED);
+        }
+        else if(valorB == 7){
+            btnDois.setBackgroundColor(Color.GREEN);
+            btnUm.setBackgroundColor(Color.RED);
+            btnTres.setBackgroundColor(Color.RED);
+        }else if(valorC == 7){
+            btnTres.setBackgroundColor(Color.GREEN);
+            btnUm.setBackgroundColor(Color.RED);
+            btnDois.setBackgroundColor(Color.RED);
+        }
+    }
+
+
 
 }

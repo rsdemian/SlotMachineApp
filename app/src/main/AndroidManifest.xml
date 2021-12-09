@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SlotMachine">
         <activity
+            android:name=".CreditosActivity"
+            android:exported="true" />
+        <activity
             android:name=".RankingActivity"
             android:exported="true" />
         <activity

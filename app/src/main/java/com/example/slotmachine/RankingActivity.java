@@ -68,7 +68,7 @@ public class RankingActivity extends AppCompatActivity {
 
     private void Musica(){
         if(mediaPlayer == null){
-            mediaPlayer = MediaPlayer.create(this,R.raw.starranking);
+            mediaPlayer = MediaPlayer.create(this,R.raw.music10);
         }
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
@@ -98,7 +98,7 @@ public class RankingActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference();
 
-        query = databaseReference.child("Ranking").orderByChild("pontuacao").limitToLast(10);
+        query = databaseReference.child("Ranking").orderByChild("pontuacao").limitToLast(20);
         childEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
